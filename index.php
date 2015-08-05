@@ -2,7 +2,7 @@
     // Bienvenido a nuestro codigo fuente. NaricesFrias.Org
     // Asi nos desenvolvemos:
     define('VERSION', '0.1.0');
-    define('URL', '//nf.mimatex.com/');
+    define('URL', '//localhost/naricesfrias/');
     define('BASE', '/');
     
     // Este es nuestro entorno:

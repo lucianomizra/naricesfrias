@@ -19,7 +19,8 @@
 <script src="//code.jquery.com/jquery-git2.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="<?= ASSETS ?>js/dropzone.js"></script>
-<script src="<?= ASSETS ?>js/app.js"></script>
+<script src="<?= ASSETS ?>js/app.js?v=<?= VERSION ?>"></script>
+<script src="<?= ASSETS ?>js/map.js?v=<?= VERSION ?>"></script>
 <script type="text/javascript">
 	App.Init({url:'<?= URL ?>',assets:'<?= ASSETS ?>',user:'<?= USER ?>',page:'<?= NPAGE ?>'});
 

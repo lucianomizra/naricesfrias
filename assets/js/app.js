@@ -51,13 +51,12 @@ var App = {
         event.preventDefault();
       });
       
-      $('.arroba').html('@');
       
       switch (App.config.page) {
           case 'home_action_index':
           case 'home_action_search':
 
-            App.MapBox();
+            Map.init();
 
           case 'home_action_error404':
 
@@ -80,6 +79,8 @@ var App = {
     },
     DomInserted: function(element) {
 
+      element.find('.arroba').html('@');
+
       element.find('.dropzone').dropzone({ 
         url: element.find('.dropzone').attr('data-action'),
         addRemoveLinks: true,
@@ -93,7 +94,7 @@ var App = {
 
         },
         removedfile: function(file) {
-          // Aca deberiamos eliminar la miniatura
+          // Aca deberiamos eliminar la miniatura de la carpeta
           return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;        
         }
       }).removeClass('.dropzone');
@@ -233,49 +234,5 @@ var App = {
         App.ChangeURL(null,null,App.history_url);
       });
     }
-  }, 
-  MapBox: function() {
-    L.mapbox.accessToken = 'pk.eyJ1IjoibHVjaWFub21penJhaGkiLCJhIjoiZmMxZjdkNTNiYTk4NjA5NDlmNDVhZWFkMmJiMTA2YmUifQ.vPuds0-shSuCOt3dlm5zLw';
-    var geolocate = document.getElementById('geolocate');
-    var map = L.mapbox.map('map', 'mapbox.streets');
-
-    var myLayer = L.mapbox.featureLayer().addTo(map);
-
-
-    if (!navigator.geolocation) {
-      geolocate.innerHTML = 'Geolocatización esta desactivada';
-    } else {
-
-      map.locate();
-    }
-
-
-    // Once we've got a position, zoom and center the map
-    // on it, and add a single marker.
-    map.on('locationfound', function(e) {
-        map.fitBounds(e.bounds);
-
-        myLayer.setGeoJSON({
-            type: 'Feature',
-            geometry: {
-                type: 'Point',
-                coordinates: [e.latlng.lng, e.latlng.lat]
-            },
-            properties: {
-                'title': 'Este soy yo!',
-                'marker-color': '#d66f4e',
-                'marker-symbol': 'star'
-            }
-        });
-
-        // And hide the geolocation button
-        // geolocate.parentNode.removeChild(geolocate);
-    });
-
-    // If the user chooses not to allow their location
-    // to be shared, display an error message.
-    map.on('locationerror', function() {
-        geolocate.innerHTML = 'Activa la geolocalizacion para navegar';
-    });
   }
 };
