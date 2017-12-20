@@ -13,9 +13,9 @@ var DataTableFn = function(){
       return '<span class="checkbox"><input value="" name="" class="checkbox-select-row" type="checkbox"><i></i></span>';
     }},
     { "sTitle": "<?= $this->lang->line("ID") ?>", "sWidth": "40px", "mData": "id", "sType": "string"},
-    { "sClass": "text-align-center", "sTitle": "<?= $this->lang->line("Status") ?>", "mData": "status", "sType": "string"},
-    { "sClass": "text-align-center", "sTitle": "<?= $this->lang->line("Title") ?>", "mData": "title", "sType": "string"},
-    { "sClass": "text-align-center", "sTitle": "<?= $this->lang->line("Details") ?>", "mData": "details", "sType": "string"},
+    { "sClass": "text-align-center", "sTitle": "<?= $this->lang->line("Estado") ?>", "mData": "status", "sType": "string"},
+    { "sClass": "text-align-center", "sTitle": "<?= $this->lang->line("Titulo") ?>", "mData": "title", "sType": "string"},
+    { "sClass": "text-align-center", "sTitle": "<?= $this->lang->line("Titulo detallado") ?>", "mData": "details", "sType": "string"},
     { "sTitle": "<?= $this->lang->line("Acciones") ?>", "sWidth": "60px", "mData": "id", "bSortable": false, "bSearchable": false, "sType": "html", "mRender" : function( data, type, full ){ 
       return '<ul class="table-actions smart-form">' +         
       '<li><a title="<?= $this->lang->line($this->MApp->secure->edit ? "Editar" : "Ver") ?>" href="<?= base_url() . "{$appController}/{$appFunction}" ?>/element/' + data + '" class="btn btn-xs btn-default edit-button" type="button"><i class="fa fa-actions <?= $this->MApp->secure->edit ? "fa-pencil" : "fa-search" ?>"></i></a></li>' +

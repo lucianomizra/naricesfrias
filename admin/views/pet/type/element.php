@@ -20,7 +20,7 @@
     'columns' => 4,
     'form' => $wgetId,
     'name' => $field,
-    'label' => $this->lang->line('Type'),
+    'label' => $this->lang->line('Especie'),
     'value' => $dataItem[$field],
     'error' => $this->validation->error($field),
     'class' => $this->validation->error_class($field),

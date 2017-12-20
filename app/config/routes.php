@@ -28,6 +28,8 @@ $route['pet/details(.*)'] = 'pet/pet/details$1';
 $route['pet/post'] = 'pet/pet/post';
 $route['pets'] = 'pet/pet/list';
 
+$route['blog'] = 'blog/list';
+
 // $route['contacto'] = 'app/contact';
 // $route['reglamento'] = 'app/reglamento';
 // $route['legal'] = 'app/legal';
