@@ -11,8 +11,9 @@ class user extends AppController {
     $this->cfg['title'] = $this->lang->line('Usuarios');
   }
 
-
-  public function list()
+
+
+  public function lista()
   {
     $this->cfg['subtitle'] = $this->lang->line('Usuarios');
     $this->cfg['folder'] = 7;

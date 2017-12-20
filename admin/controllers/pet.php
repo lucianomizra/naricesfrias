@@ -10,9 +10,8 @@ class pet extends AppController {
     parent::__construct();
     $this->cfg['title'] = $this->lang->line('Mascotas');
   }
-
-  public function list()
-  {
+  public function pets()
+   {
     $this->cfg['subtitle'] = $this->lang->line('Mascotas');
     $this->cfg['folder'] = 9;
     $this->load->library("abm", $this->cfg);

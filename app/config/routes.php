@@ -26,9 +26,9 @@ $route['pet/publish'] = 'pet/pet/form';
 $route['pet/edit(.*)'] = 'pet/pet/form$1';
 $route['pet/details(.*)'] = 'pet/pet/details$1';
 $route['pet/post'] = 'pet/pet/post';
-$route['pets'] = 'pet/pet/list';
+$route['pets'] = 'pet/pet/lista';
 
-$route['blog'] = 'blog/list';
+$route['blog'] = 'blog/lista';
 
 // $route['contacto'] = 'app/contact';
 // $route['reglamento'] = 'app/reglamento';

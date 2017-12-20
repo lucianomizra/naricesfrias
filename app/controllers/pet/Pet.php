@@ -13,6 +13,14 @@ class Pet extends APP_Controller {
 	{
 	  if(!$this->user) return redirect(base_url('login'));
 
+		if ($id) {
+			$this->data['pet'] = $this->PetM->GetPet($id);
+			if( $this->data['pet']->id_user != $this->user->id_user ) return $this->error404();
+		} else {
+			$this->data['pet'] = false;
+		}
+
+
 		$this->view = 'pet/form';
 
 		$title='Publicar';
@@ -28,16 +36,10 @@ class Pet extends APP_Controller {
 		$this->data['pet_types'] = $this->PetM->GetTypes();
 		$this->data['pet_races'] = $this->PetM->GetRaces();
 
-		if ($id) {
-			$this->data['pet'] = $this->PetM->GetPet($id);
-		} else {
-			$this->data['pet'] = false;
-		}
-
 		return $this->main();
 	}
 
-	public function list()
+	public function lista()
 	{
 		$this->view = 'pet/list';
 
@@ -160,6 +162,7 @@ class Pet extends APP_Controller {
 	    	];
 
 	    	if ($id_pet) {
+	    		$this->db->where('id_pet', $id_pet);
 	    		$r = $this->db->update('pet', $element);
 	    	} else {
 	    		$r = $this->db->insert('pet', $element);
