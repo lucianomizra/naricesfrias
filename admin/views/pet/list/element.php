@@ -28,7 +28,7 @@
     <div class="well-white smart-form">
       <fieldset>
       	        <div class="row">
-        
+         
 <? $field = 'created_at'; $this->load->view('app/form', array('item' => array(
     'columns' => 2,
     'form' => $wgetId,
@@ -37,7 +37,8 @@
     'value' => $dataItem[$field],
     'error' => $this->validation->error($field),
     'class' => $this->validation->error_class($field),
-    'placeholder' => ''
+    'placeholder' => '',
+    'disabled'=>true,
   ))) ?>
 <? $field = 'updated_at'; $this->load->view('app/form', array('item' => array(
     'columns' => 2,
@@ -47,6 +48,7 @@
     'value' => $dataItem[$field],
     'error' => $this->validation->error($field),
     'class' => $this->validation->error_class($field),
+    'disabled'=>true,
     'placeholder' => ''
   ))) ?>
 <? $field = 'id_user'; $this->load->view('app/form', array('item' => array(
@@ -81,7 +83,7 @@
     'class' => $this->validation->error_class($field),
     'placeholder' => ''
   ))) ?>
-<? $field = 'id_location'; $this->load->view('app/form', array('item' => array(
+<!-- <? $field = 'id_location'; $this->load->view('app/form', array('item' => array(
     'type' => 'select',
     'columns' => 2,
     'form' => $wgetId,
@@ -92,7 +94,7 @@
     'class' => $this->validation->error_class($field),
     'value' => $dataItem[$field],
     'placeholder' => ''
-  ))) ?>
+  ))) ?> -->
 	<? $field = 'description'; $this->load->view('app/form', array('item' => array(
     'type' => 'textarea',
     'height' => 160,
@@ -169,14 +171,14 @@
 <script>
 $(document).ready(function() {
   var formGlobal = $('#widget-form-<?= $wgetId ?>');  
-
+<?php /*
   var ckCfg = <? $this->load->view("web/ckeditor/config") ?>;
   ckCfg.contentsCss = ['<?= base_url() ?>web/ckeditorcss'];
   ckCfg.stylesSet = 'project:<?= base_url() ?>web/ckeditorstyles';
   ckCfg.height = 400;
   ckCfg.extraPlugins = 'font,colorbutton,dialog,colordialog,justify,oembed,image,image2,widget';
 	CKEDITOR.replace('textForm<?= $wgetId ?>', ckCfg);
-	
+	*/ ?>
 <? if(!$this->MApp->secure->edit):?>
   formGlobal.addClass('form-disabled');
   formGlobal.submit(function(e){
@@ -190,6 +192,7 @@ $(document).ready(function() {
   <? endif ?>
   formGlobal.validate({ 
     submitHandler: function(form) {
+      <?php /*
       for (instance in CKEDITOR.instances)
       {
         if(CKEDITOR.instances[instance])
@@ -198,6 +201,7 @@ $(document).ready(function() {
           //CKEDITOR.instances[instance].destroy();
         }
       }
+        */ ?>
       App.postForm(form);
     },
 		    rules : {

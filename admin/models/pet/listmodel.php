@@ -195,12 +195,12 @@ class ListModel extends AppModel {
   {
     if(!$this->MApp->secure->edit) return;
     $data = array(
-      'created_at' => $this->input->post('created_at'),
-      'updated_at' => $this->input->post('updated_at'),
+      // 'created_at' => $this->input->post('created_at'),
+      // 'updated_at' => $this->input->post('updated_at'),
       'id_user' => $this->input->post('id_user'),
       'name' => $this->input->post('name'),
       'gender' => $this->input->post('gender'),
-      'id_location' => $this->input->post('id_location'),
+      // 'id_location' => $this->input->post('id_location'),
       'description' => $this->input->post('description'),
       'id_status' => $this->input->post('id_status'),
       'id_race' => $this->input->post('id_race'),

@@ -6,7 +6,7 @@
             <ul class="list-inline text-center principal-nav">
                 <li><a data-rmenu-add="<? $n++; echo $n; ?>" href="<?= base_url() ?>">Mapa</a></li>
                 <li><a data-rmenu-add="<? $n++; echo $n; ?>" href="<?= base_url() ?>pets">Mascotas</a></li>
-                <li><a data-rmenu-add="<? $n++; echo $n; ?>" href="<?= base_url() ?>blog">Blog</a></li>
+                <!-- <li><a data-rmenu-add="<? $n++; echo $n; ?>" href="<?= base_url() ?>blog">Blog</a></li> -->
                 <!-- <li><a href="<?= base_url() ?>comunidad">Comunidad</a></li> -->
                 <? if(!$this->user) : ?>
                 <li><a data-rmenu-add="<? $n++; echo $n; ?>" data-toggle="modal" data-target="#sign-modal" href="#signin">Login</a></li>

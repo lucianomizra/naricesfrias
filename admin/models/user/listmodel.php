@@ -107,11 +107,11 @@ class ListModel extends AppModel {
       //  'label'   => $this->lang->line('Nacimiento'), 
       //  'rules'   => 'trim'      
       // ),
-      // array(
-      //  'field'   => 'gender', 
-      //  'label'   => $this->lang->line('Genero'), 
-      //  'rules'   => 'trim'      
-      // ),
+      array(
+       'field'   => 'gender', 
+       'label'   => $this->lang->line('Genero'), 
+       'rules'   => 'trim'      
+      ),
       // array(
       //  'field'   => 'id_location', 
       //  'label'   => $this->lang->line('Location'), 
@@ -188,11 +188,14 @@ class ListModel extends AppModel {
       // 'public_data' => $this->input->post('public_data'),
       'active' => $this->input->post('active') ? 1 : 0,
     );
-        if( $this->id )
+    
+    if( $this->id )
       $sql = $this->db->update_string($this->table, $data, "id_user = '{$this->id}'" );
     else
       $sql = $this->db->insert_string($this->table, $data );
-    $this->db->query($sql); 
+
+     
+  $this->db->query($sql);
     return $this->id ? $this->id : $this->db->insert_id();
   }
   

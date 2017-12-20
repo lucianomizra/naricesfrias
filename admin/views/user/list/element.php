@@ -70,16 +70,11 @@
     'class' => $this->validation->error_class($field),
     'placeholder' => ''
   ))) ?>
-<? $field = 'gender'; $this->load->view('app/form', array('item' => array(
-    'columns' => 4,
-    'form' => $wgetId,
-    'name' => $field,
-    'label' => $this->lang->line('Genero'),
-    'value' => $dataItem[$field],
-    'error' => $this->validation->error($field),
-    'class' => $this->validation->error_class($field),
-    'placeholder' => ''
-  ))) ?>
+    <div class="element col col-2">
+    <label>Sexo:</label> <br>
+    <input type="radio" name="gender" value="m" <? if($dataItem['gender'] == 'm' && $idItem): ?>checked="checked"<? endif ?>><i class="fa fa-male" aria-hidden="true" style="margin-right: 5px"></i>
+    <input type="radio" name="gender" value="f" <? if($dataItem['gender'] == 'f' && $idItem): ?>checked="checked"<? endif ?>><i class="fa fa-female" aria-hidden="true"></i>
+  </div>
 <? $field = 'phone'; $this->load->view('app/form', array('item' => array(
     'columns' => 4,
     'form' => $wgetId,
@@ -102,14 +97,14 @@
 <script>
 $(document).ready(function() {
   var formGlobal = $('#widget-form-<?= $wgetId ?>');  
-
-  var ckCfg = <? $this->load->view("web/ckeditor/config") ?>;
+<?php /*
+  var ckCfg = <? //$this->load->view("web/ckeditor/config") ?>;
   ckCfg.contentsCss = ['<?= base_url() ?>web/ckeditorcss'];
   ckCfg.stylesSet = 'project:<?= base_url() ?>web/ckeditorstyles';
   ckCfg.height = 400;
   ckCfg.extraPlugins = 'font,colorbutton,dialog,colordialog,justify,oembed,image,image2,widget';
 	CKEDITOR.replace('textForm<?= $wgetId ?>', ckCfg);
-	
+	*/ ?>
 <? if(!$this->MApp->secure->edit):?>
   formGlobal.addClass('form-disabled');
   formGlobal.submit(function(e){
@@ -123,6 +118,8 @@ $(document).ready(function() {
   <? endif ?>
   formGlobal.validate({ 
     submitHandler: function(form) {
+
+      <?php /*
       for (instance in CKEDITOR.instances)
       {
         if(CKEDITOR.instances[instance])
@@ -131,6 +128,7 @@ $(document).ready(function() {
           //CKEDITOR.instances[instance].destroy();
         }
       }
+      */ ?>
       App.postForm(form);
     },
 		    rules : {
