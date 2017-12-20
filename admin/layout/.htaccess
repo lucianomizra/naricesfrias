@@ -1,0 +1,19 @@
+Allow from all
+
+<IfDefine !NZ_LAYOUT>
+	RewriteEngine On
+	RewriteBase /_nz/current/
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.+)$ layout/$1 [L]
+</IfDefine>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault A29030400
+</IfModule>
+<IfModule mod_headers.c>
+Header unset Last-Modified
+Header set Expires "Fri, 21 Dec 2012 00:00:00 GMT"
+Header set Cache-Control "max-age=29030400, public"
+</IfModule>

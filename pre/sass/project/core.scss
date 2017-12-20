@@ -1,0 +1,90 @@
+html, body {
+  overflow-x: hidden;
+  background: $brand-base;
+  background-position: top center;
+  background-size: 100%;
+  background-repeat: repeat-y;
+  color: $brand-text;
+}
+.hidden,
+.none,
+#routes {
+  display: none;
+}
+
+@-webkit-keyframes autofill {
+	to {
+		color:inherit;
+		background: transparent;
+	}
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-animation-name: autofill;
+	-webkit-animation-fill-mode: both;
+}
+
+a {
+  color: $brand-link;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.modal-center {
+  .modal-dialog {
+    transform: translate(0, -50%) !important;
+    top: 50%;
+    margin: 0 auto;
+  }
+}
+.list-group-item {
+  a {
+    display: block;
+  }
+  &.active {
+    border-color: $brand-base-dark;
+    background: $brand-base-dark;
+    a {
+      color: white;
+    }
+    &:hover {
+      border-color: $brand-base-dark;
+      background: $brand-base-dark;
+    }
+  }
+}
+.breadcrumb {
+  background: $brand-base-dark;
+  a {
+    color: white;
+  }
+}
+
+.card-body {
+  padding: 20px;
+}
+
+
+.card-header {
+  color: white;
+  font-size: $font-size-lg;
+}
+
+.w100 {
+  width: 100% !important;
+}
+
+.block {
+  display: block;
+}

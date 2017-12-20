@@ -1,0 +1,31 @@
+// Proyect
+
+// Fonts 
+@import "font/font";
+
+// Variables
+@import "bootstrap/variables";
+@import "project/variables";
+
+// Bootstrap and Normalize
+@import "vendor/normalize";
+@import "bootstrap/bootstrap-flex";
+
+// Reset and dependencies
+@import "vendor/animate";
+@import "vendor/swiper";
+@import "vendor/select";
+@import "vendor/dropzone";
+@import "vendor/font-awesome";
+
+
+// Basic CSS APP
+@import "project/core";
+@import "project/general";
+
+// Components
+@import "components/common/header";
+@import "components/common/rmenu";
+// @import "components/common/footer";
+// @import "components/common/rotate";
+

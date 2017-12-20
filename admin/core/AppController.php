@@ -1,0 +1,1 @@
+<?php require_once NZAPATH . "core/AppController.php"; 

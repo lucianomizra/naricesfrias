@@ -1,0 +1,49 @@
+$brand-primary:         #d66f4e;
+$brand-success:         #167745;
+$brand-info:            #8a8a8a;
+$brand-warning:         #edc048;
+$brand-danger:          #ac2b30;
+$brand-base:            #f1f1f1;
+$brand-base-gray:       #8a8a8a;
+$brand-base-dark:       #4d4a51;
+$brand-text:            #4d4a51;
+$brand-link:            #013f75;
+
+
+$btn-font-weight:                normal;
+
+$btn-default-color:              #333;
+$btn-default-bg:                 #fff;
+$btn-default-border:             #ccc;
+
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             darken($btn-primary-bg, 5%);
+
+$btn-success-color:              #fff;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             darken($btn-success-bg, 5%);
+
+$btn-info-color:                 #fff;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                darken($btn-info-bg, 5%);
+
+$btn-warning-color:              #fff;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             darken($btn-warning-bg, 5%);
+
+$btn-danger-color:               #fff;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              darken($btn-danger-bg, 5%);
+
+$btn-facebook-color:               #fff;
+$btn-facebook-bg:                  #305093;
+$btn-facebook-border:              darken($btn-facebook-bg, 5%);
+
+$btn-twitter-color:               #fff;
+$btn-twitter-bg:                  #02abf0;
+$btn-twitter-border:              darken($btn-twitter-bg, 5%);
+
+$btn-link-disabled-color:        $gray-light;
+
+$normal-margin:               15px;

@@ -1,0 +1,107 @@
+$rmenu-background: white;
+$rmenu-color: $brand-base-dark;
+$rmenu-bordercolor: rgba($brand-base-dark, .1);
+$rmenu-maxwidth: 90%;
+$rmenu-zindex: 1040;
+
+.rmenu {
+	position: fixed;
+	top: 0;
+	left: auto;
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	overflow: scroll;
+	transition: .3s ease right;
+	max-width: $rmenu-maxwidth;
+	background : $rmenu-background;
+	color: $rmenu-color;
+	z-index: $rmenu-zindex;
+	padding-bottom: 15px;
+	font-family: $font-family-sans-serif;
+	text-transform: uppercase;
+	&__ul {
+		list-style: none;
+		padding: 0;
+		li {
+			padding: $spacer*2;
+			.divider {
+				font-weight: 700;
+				padding-left: $spacer;
+				color: $brand-danger;
+			}
+			a {
+				color: $rmenu-color;
+				position: relative;
+				transition: color 0.5s ease;
+				text-decoration: none!important;
+				&:hover {
+					color: $brand-danger;
+				}
+				&.header__selected-item {
+					color: $salmon;
+				}
+			}
+			.main-nav__btn {
+				float: left;
+				right: 0;
+			}
+			.social-network-icons {
+				float: right;
+			}
+			&:first-child {
+				padding-bottom: $spacer*4;
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+	.rmenu-close {
+		cursor: pointer;
+		color: $rmenu-color;
+		width: 20px;
+		display: block;
+		transform: rotate(-90deg);
+		top: 20px;
+		left: 0;
+		position: relative;
+		transition: color 0.5s ease;
+		&:hover {
+			color: $salmon;
+		}
+	}
+}
+.rmenu-btn {
+	@extend .hidden-lg-up;
+	position: absolute;
+	right: 5%;
+	align-self: center;
+	cursor: pointer;
+	    top: 34px;
+	.bars {
+		&,
+		&:before,
+		&:after {
+			width: 30px;
+			height: 3px;
+			content: '';
+			background: $rmenu-color;
+			display: block;
+			position: relative;
+		}
+		&:before {
+			top: -9px;
+		}
+		&:after {
+			top: 6px;
+		}
+	}
+}
+
+body.open-rmenu {
+	overflow:hidden;
+	.rmenu {
+		right: 0;
+	}
+}

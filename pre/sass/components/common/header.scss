@@ -1,0 +1,43 @@
+header .principal-nav {
+    text-transform: uppercase;
+}
+header .principal-nav a {
+  color: $brand-text;
+  padding: 5px;
+  outline: none !important;
+  text-decoration: none !important;
+  &:hover {
+      background: $brand-primary !important;
+      color: white;
+      text-decoration: none;
+ }
+}
+header .principal-nav li {
+    float: left;
+    margin-left: 5px;
+}
+header .principal-nav li.active a {
+    background: $brand-base-dark;
+    color: white;
+}
+header {
+    background: white;
+  padding-bottom: 5px;
+	border-bottom: 5px solid $brand-primary;
+}
+
+header .app-logo {
+  margin: 10px 0;
+  float: left;
+  @include down(sm) {
+    margin: 20px 0 0 0;
+    img {
+      width: 160px;
+    }
+  }
+}
+
+header nav.pull-right {
+  margin-top: 40px;
+  font-size: 16px;
+}
