@@ -21,3 +21,6 @@ if (APP_MODE == 'test')
 	$assign_to_config['log_threshold']	= 2;
 	define('ENVIRONMENT', 'development');
 }
+
+
+// Esta es una prueba
